@@ -21,4 +21,20 @@ extern char **environ;
 #include <dirent.h>
 
 
+
+/**
+ * struct builtin - the shell builtins
+ * @s: name of builtins
+ * @f: what the builtins do (or function)
+ **/
+
+
+typedef struct builtin
+{
+	char *s;
+	int (*f)(char **av);
+
+} builtin;
+
+
 #endif
