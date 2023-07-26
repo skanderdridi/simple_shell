@@ -20,4 +20,8 @@ void print_environment(void);
 void sigintHandler(int sig_num);
 void if_conditions(char **cmd, char *line);
 
+/* --- check_path --- */
+_Bool check_path(config *);
+_Bool validate_constraints(config *build);
+
 #endif
