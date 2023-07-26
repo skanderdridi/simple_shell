@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <stdio.h>
 /**
  * get_path - function that gets the path
  * @cmd: the command line
