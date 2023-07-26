@@ -1,65 +1,38 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-
-extern char **environ;
-
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
-#include <fcntl.h>
-#include <errno.h>
 #include <unistd.h>
-#include <signal.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-#include <stddef.h>
-#include <wait.h>
-#include <stddef.h>
+#include <string.h>
 #include <errno.h>
-#include <dirent.h>
 
-
+extern char **environ;
+int _check_tokens(char *input);
+char **_getinput(char *input);
+char *_strcpy(char *dest, const char *src);
+char *_strcon(char *dest, char *src);
+int _strcmp(char *src1, char *src2);
+int _strlen(char *str);
+char *checkexec(char **file);
+int checkbin(char *input, char **tokens);
+int fexit(void);
+int fenv(void);
 
 /**
- * struct builtin - the shell builtins
- * @s: name of builtins
- * @f: what the builtins do (or function)
- **/
-
+ * struct builtin - built in of the shell
+ *
+ * @func: function
+ * @name: name of the built in
+ */
 
 typedef struct builtin
 {
-	char *s;
-	int (*f)(char **av);
+	int (*func)();
+	char *name;
+} built_in;
 
-} builtin;
-
-int _env(char **av);
-int _cd(char **av);
-int fexit(char **av);
-
-
-char **str_split(const char *str, const char del);
-void free_arr(char **tow);
-
-
-
-char *_getenv(const char *name);
-char *_match(char **s);
-int _path(char *s);
-
-void execute_line(char *line);
-
-
-
-
-
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-
-
-
-
-
-#endif
+#endif /* SHELL_H */
