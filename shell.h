@@ -19,5 +19,6 @@ void exec_command(char **cmd);
 void print_environment(void);
 void sigintHandler(int sig_num);
 void if_conditions(char **cmd, char *line);
+char *search_path(char *command);
 
 #endif
