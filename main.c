@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * REPL - REPEAT loop
+ * REPL - REP loop
  * @input: isatty(STDIN_FILENO)
  **/
 void REPL(int input)
