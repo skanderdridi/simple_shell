@@ -36,5 +36,30 @@ typedef struct builtin
 
 } builtin;
 
+int _env(char **av);
+int _cd(char **av);
+int fexit(char **av);
+
+
+char **str_split(const char *str, const char del);
+void free_arr(char **tow);
+
+
+
+char *_getenv(const char *name);
+char *_match(char **s);
+int _path(char *s);
+
+void execute_line(char *line);
+
+
+
+
+
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+
+
+
+
 
 #endif
