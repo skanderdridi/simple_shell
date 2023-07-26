@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * empty_line - checks if exists a empty line
